@@ -1,0 +1,16 @@
+File Permissions
+
+r	read - allows the file to be opened and contents read
+w	write - allows the file to be opened and contents changed
+	(includes the ability to delete the CONTENTS of the file but not the file itself)
+x	execute - allows the file to be executed as a command or process
+	(inplies the file is a compliled program or text file that contains script commands)
+
+
+
+Directory Permissions
+
+r	read(list) - allows the contents of the directory to be read or listed
+w	write - allows the contents of the directory to be changed. 
+	(create, delete and rename new files and directories)
+x	pass-thru - allows the user to pass thru the directory to access files and directories below it 

@@ -1,0 +1,36 @@
+#!/bin/bash 
+# COURSE: ULI101 
+# QUIZ SCRIPT #2 
+
+intcount=0 
+inttotal=0 
+if [ $# -lt 4 ] 
+then
+   echo "John Lennon"
+   exit 3 
+fi 
+
+for num in $*
+do
+   echo $num | grep "^[0-9]*$" > /dev/null
+   if [ $? = 0 ]
+   then
+       intcount=$(( $intcount+1 ))
+       inttotal=$(( $inttotal+$num ))
+   fi 
+done
+
+ 
+if [ $intcount -ne $# ] 
+then
+   echo "George Harrison" | tr 'A-Z' 'a-z'
+   exit 1
+else
+    for num in $*
+    do
+       echo $num 
+    done
+    echo "Paul McCartney: $inttotal"
+    exit 0 
+fi 
+

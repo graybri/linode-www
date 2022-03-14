@@ -1,0 +1,30 @@
+
+
+grep "practise" mkt/docs/file15 | tail -3 
+
+head -6 ~brian/docs/file8 >> ~/file9
+
+head -8 /var/www/html/* | grep "midterm"
+
+cat /tmp/logs/file11 | tee -a sales/file13 
+
+find /home -user lisa 2> /dev/null
+
+head -9 ~brian/docs/file8 | tail -2 
+
+
+
+
+Shortest paths...
+
+Append the last 3 lines of file9 in upper case to file15 and file16
+
+Append the sorted contents of file5 to file1 and the unsorted contents to file10
+
+Display the 3rd and 4th field of the comma delimited file7 in lower case.
+Relative paths
+
+Display the sorted contents of file6 and append the unsorted contents to file3
+shortest paths
+
+

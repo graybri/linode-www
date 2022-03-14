@@ -1,0 +1,30 @@
+
+    /
+      \-- home
+            \-- jsmith
+                    \-- docs
+                    |     |
+                    |       -- myinfo 
+                    |
+                    \-- pics
+                    |
+                     -- newinfo             "/home/jsmith/docs
+                    |
+                     -- myinfo              "Welcome to the campus"
+
+ 
+
+** BAD **
+cat file1 | grep "pattern"
+** GOOD **
+grep "pattern" file1
+
+
+** BAD **
+cat file1 | tr 'a-z' 'A-Z'
+** GOOD **
+tr 'a-z' 'A-Z' < file1
+
+
+
+

@@ -1,0 +1,52 @@
+
+
+Below is the contents of a file called menu. Each record (line) has 3 fields, separated from each other by a comma.  The first field is the menu item name, the second field is the price of the item, and the third field is the 3 digit Menu code.  There are no spaces at the beginning or end of each line.  menu is in the current directory. 
+
+Beef with Broccoli,12.55,578 
+Cashew Chicken,12.99,413 
+Sweet and Sour Chicken,8.99,401 
+Chicken Fried Rice,5.77,201 
+Plain Lo Mein,4.55,304 
+Pepper Steak,7.88,507 
+Pork Fried Rice,4.99,203 
+Chicken Chow Mein,6.99,408 
+Egg Roll,1.99,101 
+Shrimp Chow Mein,8.99,608 
+Green Beans with shredded beef,9.66,566 
+
+
+Below is the contents of a file called cars. Each record (line) has 5 fields, separated by one or more spaces, which from left to right are: manufacturer, model, year of manufacture, total km (in 000) and asking price in $. There are no spaces at the start or at the end of each line.  cars is in the current working directory. 
+
+plym   fury     77      73      2500 
+ford   thundbd  84      10      17000 
+fiat   600      65      115     450 
+chevy  nova     80      50      3500 
+ford   mustang  66      45      1700
+
+
+Write a command to display the first and third fields of lines in menu where the menu code is a number in the 400's
+(2 marks)
+awk -F','  '$3 ~ /4[0-9][0-9]/ {print $1, $3}' menu
+
+Write a command to display the contents of cars but if the line has a manufacturer of "fiat" replace "00" with "hundred"
+sed '/fiat/ s/00/hundred/' cars
+
+Write a sed command to just display the contents of cars except lines 2-4
+sed '2,4 d' cars
+
+Write a command to make a new file in the present working directory called cars2, that contains the contents of the file cars but with all zeroes ('0') changed to the word 'null' 
+(2 marks)
+sed '/s/0/zero/g' cars > cars2
+
+Print the third field followed by the first field of all records in cars where the price is greater than $4000
+(2 marks)
+awk '$5 > 4000 {print $3, $1}' cars
+
+Display the first field of all records in cars where the line contains the pattern “00”
+awk '/00/ {print $1}' cars
+
+Write a sed command to display the first 3 lines of the file menu
+sed '3 q' menu
+
+
+ 

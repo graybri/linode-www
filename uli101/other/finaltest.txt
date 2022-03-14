@@ -1,0 +1,245 @@
+What directory permission allows a user to pass through the directory to access a file? 
+
+Read 
+Write 
+Execute 
+All Three 
+
+ 
+The command that can be used to change the default permissions of newly created files and directories is? 
+
+umask 
+chown 
+chmod 
+chperm 
+
+
+What system directory usually contains system configuration files? 
+
+/conf 
+/etc 
+/sbin 
+/var 
+
+
+Which of the following is a “hidden” file: 
+
+./testfile 
+~/testfile 
+~/.testfile 
+testfile. 
+
+ 
+What will the following command do?  ls f*[34] 
+
+List filenames ending in a 3 or a 4 
+List filenames that start with f followed by any number of 3's or 4's 
+List filenames that contain a * 
+List filenames that start with f followed by any characters but ending with a 3 or 4 
+
+
+Assume you run: touch a1v1 a1-v1 a1-va a1-vA a2v2 a2-v2 a2-va a2-vA
+What is the output of: ls a[!2]?v[!aA]
+
+a1v1
+a1-v1
+a2-v2
+a2v2
+
+
+Which command creates the empty file abc in your working directory if one did not exist:
+
+more abc
+cat < abc
+file abc
+touch abc
+
+
+Which command is the equivalent of: chmod 755 mydir
+
+chmod ugo=rwx mydir
+chmod u=rwx,go=rx mydir
+chmod go-w mydir
+chmod a+rx,u+w mydir
+
+
+Which command shown below, will only remove directory mydir if it is empty:
+
+rm mydir
+rm -r mydir
+rm -e mydir
+rmdir mydir
+
+
+Which command will rename a file called xyz.c, in your current directory, to XYZ.c?
+
+mv xyz.c XYZ.c
+ren xyz.c XYZ.c
+cp -r xyz.c XYZ.c
+mv XYZ.c xyz.c
+
+___________________________________________________________________________________________
+
+Write a command to create a Symbolic link to the /usr/data directory. The new link should be created in your home directory and be called data 
+
+ln -s /usr/data ~/data
+
+
+Write a command to create a new hard link named file10 in your present working directory that links to ../file9
+	
+ln ../file19 file20
+
+	
+Write a command to create an alias called godb that executes: 
+mysql -h matrix.senecac.on.ca -u bgray -p main 
+	
+alias godb="mysql -h matrix.senecac.on.ca -u bgray -p main"
+
+	
+Write a command to copy the file studentdata from your home directory on the local host to the /etc directory on the remote host jupiter.planets.com. Connect as the user karen 
+	
+scp ~/studentdata karen@jupiter.planets.com:/etc
+
+
+Write a command to run a process called a1marks as a background process	
+
+a1marks &
+
+_____________________________________________________________________________________________
+
+Below are the contents of a file called inventory. Each record (line) has 3 fields, separated from each other by a comma. The first field is the product name, the second field is the quantity on hand, and the third field is the product code. There are no spaces at the beginning or end of each line. inventory is in the current directory.
+
+Strawberry Jam,300,191
+Raspberry Jam,1216,194
+Blueberry Jam,96,195
+Strawberry Compote,49,621
+Raspberry Compote,1937,624
+Blueberry compote,200,625
+Frozen Strawberries,130,1921
+Straw Hats,16,2047
+
+
+Write a grep command to display the records that do not contain "berry". Append the output to ./file1
+	
+grep -v "berry" inventory >> ./file1
+
+
+Write a grep command to display the records that contain "Blue" at the beginning of the line. The output should be displayed in upper case.
+	
+grep "^Blue" inventory | tr 'a-z' 'A-Z'
+
+
+Write a grep command to display the records that contain "Compote" ignoring case. The output should overwrite the current contents of ./file6
+	
+grep -i "Compote" inventory > ./file6
+
+
+Write a grep command to display all records that have a product code staring with 1
+	
+grep ",1[0-9]*$" inventory
+
+
+Write a grep command to display all records that contain the word "Straw"
+
+grep -w "Straw" inventory
+
+
+Write a grep command to display the number(count) of records that contain "Jam"
+
+grep -c "Jam" inventory
+
+
+Write a grep command to display the records that end in a "1" or a "4"
+
+grep "[14]$" inventory
+
+
+
+Below are the contents of a file called students. Each record (line) has 4 fields, separated from each other by one or more spaces. The first field is the last name, the second field is the first name, the third field is the student ID, and the fourth field is the email account. There are no spaces at the beginning or end of each line. students is in the current directory.
+
+
+Nygard    Peter    102333    pnygard
+Smith     John     124568    jsmith
+Peters    Sharon   213448    speters
+Patel     Raj      663229    rpatel
+Kaur      Indira   322231    ikaur
+Abbas     Ahmed    214574    aabbas
+
+
+Write an awk command to display the first and second fields of records in students where the student ID ends in 8 or 9
+
+awk '$3 ~ /[89]$/ {print $1, $2}' students
+
+
+Write a sed command to display all records except for John Smith
+
+sed '2 d' students or sed '/Smith/ d' students
+
+
+Write a sed command to display all records but replacing the students ID number with the word "private"
+
+sed 's/[0-9][0-9][0-9][0-9][0-9][0-9]/private/' students
+
+
+__________________________________________________________________________________________________
+
+
+
+#!/bin/bash
+if [ $# -lt 2 ]
+then
+ echo “error A”
+ exit 1
+fi
+
+echo $* | grep “[a-z]” > /dev/null
+if [ $? -eq 0 ]
+ then
+ echo “error B”
+ exit 2
+fi
+
+sum=0
+for var in $*
+ do
+ echo $var | grep “^[1-9]0$” > /dev/null
+ if [ $? -eq 0 ]
+ then
+ sum=$(( $sum + $var ))
+ fi
+done
+
+echo “Total is : $sum”
+
+
+The above bash shell script is myscript.sh. 
+Write down the EXACT output you will see, for the following commands:
+
+
+./myscript.sh 
+echo $?
+
+error A
+1
+
+
+./myscript.sh test1 test2 
+echo $?
+
+error B
+2
+
+
+./myscript.sh 30 40 70
+echo $?
+
+Total is : 140
+0
+
+
+./myscript.sh 33 22 
+echo $?
+
+Total is : 0
+0
+
