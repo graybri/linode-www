@@ -1,0 +1,19 @@
+# README of OPS245 Python Part 2.
+The following example scripts are presented in order
+
+menu.py - Example script showing no logical control structures
+
+if1.py - Basic if <condition>: block. Indentation, conditional operators
+         matching datatypes in conditions
+
+twoif.py - int(), 2 mutually exclusive if blocks, indentation
+
+if2.py - else: block, comparison of 2 strings, indentation
+
+if3.py - nested ifs, indentation, int(), multiple conditions, and, or
+
+if4.py - nested if: else:, indentation
+
+if5.py - elif: secondary conditions, indentation
+
+bool.py - Boolean values, True, False, str(), used in place of conditions

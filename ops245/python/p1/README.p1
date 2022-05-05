@@ -1,0 +1,10 @@
+# README of OPS245 Python Part 1.
+The following example scripts are presented in order
+
+hworld.py - shebang, comments, print()
+
+first.py - variables, datatypes, type(), input(),
+           operators
+
+osexample.py - import os, os.system(), object.read()
+
