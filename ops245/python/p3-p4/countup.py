@@ -11,10 +11,13 @@ Date: 05 Feb. '21
 
 '''
 
+# Initialze counter to int value 0
 counter=0
 
+# Check a condition and see if it is False
 while (counter == 10) == False:
   print(counter)
+# Increment counter
   counter+=1
 
 print(counter)

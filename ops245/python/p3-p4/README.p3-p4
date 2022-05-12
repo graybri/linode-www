@@ -1,0 +1,33 @@
+# README of OPS245 Python Part 3 and Part 4.
+  The following example scripts are presented in order
+
+lists.py - lists, for loops, index positions, append(),
+           insert(), extend() 
+
+strings.py - looping through the characters in a string
+
+strings2.py - Use upper() and lower() methods to manipulate
+              strings
+
+userprint.py - os.popen(), read() method.
+
+userprint2.py - os.popen(), readlines(), for loop, split()
+                Accessing list values using index 
+
+sets.py - Creating a set {}, add(), looping through a set 
+
+countdown.py - for loop through a list, add an else: 
+               block to a for loop
+
+countdown2.py - while loop with else: block
+
+countdown3.py - while loop with else block,
+                else: block will execute wven in while
+                loop never iterates
+
+countup.py - Demonstrate a while loop that evaluates a condition
+             and compares the result to a Boolean
+
+
+countup2.py - Demonstrate the 'not' keyword before a condition
+              to reverse the condition 
