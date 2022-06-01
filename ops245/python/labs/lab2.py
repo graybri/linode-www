@@ -11,38 +11,35 @@
 # Author  : Brian Gray
 # Date    : 2022-05-18
 # 
-# Name    : backupVM.py
+# Name    : lab2.py
 #
 # Purpose :	Backs up centosX VM's
 #           Establish root access
-#           
+#           Backup individual VM's or ALL
 # 
-#
-#
-# Usage   :	 
+# Usage   :	./lab2.py 
 #
 #######################################################
 
-
-
-
-# backupVM.py
-# Purpose: Backs up virtual machines
-#
-# USAGE: ./backupVM.py
-#
-# Author: *** Brian Gray ***
-# Date:   *** Sept 29/2021 ***
-
+# Import OS module
 import os
 
+# Get current username (looking for root)
+# Use os.popen() to get username, assign to object currentuser
 currentuser = os.popen('whoami')
+# Use .read() method to return contents of currentuser as string
+# assign to string object user
 user = currentuser.read()
+# Use strip() method on user to strip any whitespace
 user = user.strip()
+
+# Test for user root, display error and exit()
 if user != 'root':
   print("You must be root to run this script")
   print("You are currently the user " + user)
   exit()
+
+# If root prompt user for VM's to backup all or one of centos1,centos2,centos3
 else:
   ans = input('Do you wish to backup all VM\'s? (y/n) ')
   if ans=='y':
