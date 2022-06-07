@@ -1,12 +1,16 @@
 # README of OPS245 Python Part 5
   The following example scripts are presented in order
 
-args1.py
+args1.py - Introduce the argparse module for command line arguments
+           Create parser object, adding required command arguments
+           Use parse_args() method to parse command line
 
-args2.py
+args2.py - Addition of optional argument to parser object
 
-args3.py
+args3.py - Addition of optional argument with a default value
+           and list of possible values
 
-args4.py
+args4.py - Add 3 separate options that don't require a value but will
+           be assigned True if used
 
-args5.py
+args5.py - Add options in a add_mutual_exclusive_group()
