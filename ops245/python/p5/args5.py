@@ -16,7 +16,7 @@
 # Purpose : Demonstrate the use of a mutually exclusive
 #           group of options
 # 
-# Usage   :	./args5.py
+# Usage   : ./args5.py
 #           ./args5.py -h
 #           ./args5.py 2 6
 #           ./args5.py -a 2 6

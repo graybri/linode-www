@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# tarchiver.py
+# tarchiver2.py
 # Purpose: Creates a tar archive of a directory
 #
-# USAGE: ./tarchiver.py
+# USAGE: ./tarchiver2.py
 #
 # Author: *** Brian Gray ***
 # Date: *** OCT 6th 2021 ***

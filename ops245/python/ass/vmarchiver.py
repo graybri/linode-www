@@ -1,29 +1,17 @@
 #!/usr/bin/env python3
 
-'''
-  ____   ____   	Brian Gray
- | __ ) / ___| 	    School of Information Technology
- |  _ \| |  _   	Administration & Security
- | |_) | |_| |_ 	Seneca College
- |____(_)____(_)	brian.gray@senecacollege.ca
-'''                
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-05-30
-# 
-# Name    : vmarchiver.py
+# vmarchiver.py
+# Purpose: Backs up virtual machines
 #
-# Purpose :	Modified from backupVM.py for Assignment 1
-#           Dynamically list of VM's with virsh list
-#           Dynamically retrieves image filename from
-#           virsh dumpxml 
+# USAGE: ./vmarchiver.py
 #
-# Usage   :	./vmarchiver (as root) 
-#
-#######################################################
+# Author: *** Brian Gray   ***
+# Date:   *** June 28/2022 ***
 
+# Import os module
 import os
 
+# Test for root
 currentuser = os.popen('whoami')
 user = currentuser.read()
 user = user.strip()
@@ -31,31 +19,42 @@ if user != 'root':
   print("You must be root to run this script")
   print("You are currently the user " + user)
   exit()
-else:
-  vmlist=[]
-  vms=os.popen("virsh list --all --name")
 
-  for vm in vms.readlines():
-    vmname=vm.strip()
-    if vmname!="":
-      vmlist.append(vmname)
-    
-  machine=''
-  while machine not in vmlist: 
-    machine = input('Which VM would you like to backup? '+str(vmlist) + ': ')
+# Build vmlist
+vmlist=[]
+vms=os.popen("virsh list --all --name")
+
+for vm in vms.readlines():
+  vmname=vm.strip()
+  if vmname!="":
+    vmlist.append(vmname)
+
+# Prompt for target vm
+machine = input('Which VM would you like to backup? '+str(vmlist) + ': ')
+
+while machine not in vmlist:
+  print("Please enter a VM from the list...")
+  machine = input('Which VM would you like to backup? '+str(vmlist) + ': ')
   
-  print('Backing up ' + machine)
-  xmlcommand='virsh dumpxml ' + machine + ' >> /var/lib/libvirt/images/' + machine + '.xml'
-  os.system(xmlcommand) 
-  imgcommand='virsh dumpxml ' + machine + '| grep "source file" | cut -d\\\' -f2' 
-  img=os.popen(imgcommand)
-  imgfile=img.read()
-  imgfile=imgfile.strip()
-  date=os.popen('date +%Y%m%d')
-  today=date.read()
-  today=today.strip()
-  tarcommand='tar cvJf /home/bgray/backups/' + machine + '-' + today + '.tar.xz ' + imgfile + ' /var/lib/libvirt/images/' + machine + '.xml' 
-  os.system(tarcommand)
+# Retrieve qcow2 filename
+command='virsh dumpxml ' + machine + '| grep "source file" | cut -d\\\' -f2' 
+img=os.popen(command)
+imgfile=img.read().strip()
 
+# Generate xmlfile name
+xmlfile='/tmp/' + machine + '.xml'
 
+# Generate xml file
+command='virsh dumpxml ' + machine + ' > ' + xmlfile
+os.system(command)
 
+# Generate tarfile name
+date=os.popen('date +%Y%m%d')
+date=date.read().strip()
+tarfile='~/backups/' + machine + '-' + date + '.tar.gz' 
+
+# Perform tar backup
+command='tar cvzf ' + tarfile + ' ' + imgfile + ' ' + xmlfile
+print('Backing up : ' + machine)
+os.system(command)
+print("DONE")

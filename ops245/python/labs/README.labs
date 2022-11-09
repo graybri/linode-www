@@ -1,5 +1,12 @@
 # README of OPS245 Python labs
 The following scripts are solutions to lab investigations
 
-myreport.py - Lab 1 - Investigation 4
+myreport.py - Lab 1 
 
+backupVM.py - Lab 2
+
+tarchiver.py - Lab 3
+
+tarchiver2.py - Lab 4
+
+disk-monitor.py - Lab 5

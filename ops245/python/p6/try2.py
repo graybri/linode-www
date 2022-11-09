@@ -11,12 +11,16 @@
 # Author  : Brian Gray
 # Date    : 2022-08-10
 # 
-# Name    : try.py
+# Name    : try2.py
 #
-# Purpose : Demonstrate exception handling (error handling) 
+# Purpose : Demonstrate exception handling (error handling)
+#           For opening of files 
+#           Trap and handle various exceptions
 #           Using try: ... except:
+#           Run with readonly file (test.ro)
+#           Run with missing file (test.rw)`
 #
-# Usage   : ./try.py	 
+# Usage   : ./try2.py	 
 #
 #######################################################
 
@@ -30,36 +34,34 @@
 # with a except <exceptionname>: block
 # We can add an else block for what to do if no exception occurs
 
+# Prompt for filename
+file=input('Enter a filename: ')
 
-# Try to print() 2 values of different datatypes
-
-word='hello'
-num=42
-
+# start try: block
 try:
-    # This command will fail because of 2 different datatypes
-    print(word + num)
+    # Attempt to open file in Read/Write mode
+    fo=open(file, "r+")
+except PermissionError:
+    # This will handle file permission exception
+    print("You do not have permission to this file")
+except FileNotFoundError:
+    # This will handle file not found exception
+    print("This file does not exist")
 except:
-    # This will trap any of the possible exceptions
-    print("Some kind of error occurred")
-
-input("Press enter to continue...")
-
-# We can trap specific named exceptions and handle them differently
-
-try:
-    # This command will fail because of 2 different datatypes
-    print(word + num)
-except TypeError:
-    # This will trap an exception caused by two different datatypes
-    print("Datatypes don't match")
-except:
-    # This will trap all of the other possible exceptions
-    print("Some other kind of error occurred")
+    # This will handle all other exceptions
+    print("Error Opening File")
 else:
-    # This block will execute only if no exceptions
-    print("It worked!")
+    # Do this if file opened successfully
+    content=fo.read()
+    print('Contents : ' + content)
+    fo.close()
+finally:
+  print('thanks')
 
-input("Press enter to continue...")
+
+
+
+
+
 
 

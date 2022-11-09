@@ -1,0 +1,32 @@
+# README of OPS245 Python Part 7
+
+*** The text file "test.txt" is used for demonstration 
+
+The following example scripts are presented in order
+
+file1.py    - Introduce the handling of files
+              Demonstrate open() to create file handle
+              Demonstrate read() method
+              Demonstrate close() method
+
+file2.py    - Introduce the handling of files within with: block
+              Demonstrate open() to create file handle
+              Demonstrate read() method
+              Demonstrate automatic close when exiting block
+
+file3.py    - Demonstrate readlines() method
+              Demonstrate looping through returned list
+
+file4.py    - Demonstrate range() function
+              Demonstrate looping through range printing one line at a time
+
+file5.py    - Demonstrate looping directly through file handle object
+
+
+notry.py - Demonstrate open file and it's exceptions with no
+           exception handling
+           Raise PermissionError and FileNotFoundError exceptions
+
+try2.py  - Demonstrate handling file open exceptions.
+           Demonstrate us of else: and finally:
+

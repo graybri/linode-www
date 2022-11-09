@@ -2,7 +2,7 @@
 
 '''
   ____   ____   	Brian Gray
- | __ ) / ___| 	    School of Information Technology
+ | __ ) / ___|          School of Information Technology
  |  _ \| |  _   	Administration & Security
  | |_) | |_| |_ 	Seneca College
  |____(_)____(_)	brian.gray@senecacollege.ca
@@ -12,12 +12,12 @@
 # Author  : Brian Gray
 # Date    : 2022-04-29
 # 
-# Name    : lab1.py
+# Name    : myreport.py
 #
-# Purpose :	Gather System Info into a report
+# Purpose : Gather System Info into a report
 #           Demonstrate use of os.system() os.popen()
 #
-# Usage   :	./lab1.py > ~/bin/pythonreport.txt 
+# Usage   : ./myreport.py > ~/bin/pythonreport.txt 
 #
 #######################################################
 
@@ -50,6 +50,4 @@ ifcfg=os.popen('ip address show')
 print('The network configuration is:')
 print()
 print(ifcfg.read())
-
-
 

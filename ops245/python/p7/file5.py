@@ -1,18 +1,33 @@
 #!/usr/bin/env python3
+#
+#  ____   ____   	Brian Gray
+# | __ ) / ___| 	School of Information Technology
+# |  _ \| |  _   	Administration & Security
+# | |_) | |_| |_ 	Seneca College
+# |____(_)____(_)	brian.gray@senecacollege.ca
+#                
+########################################################
+# Author  : Brian Gray
+#
+# Date    : 2022-08-19
+# 
+# Name    : file5.py
+#
+# Purpose : Demonstrate looping directly through file object
+#
+# Usage   : ./file5.py
+#           (requires test.txt for demonstration)
+#
+#######################################################
 
-# open file and create file object fo
-# Modes include r,a,w,r+,a+
+# We can also directly loop through the lines of the 
+# file by looping on the file object
 
-### Not always practical to use fo.read() method
-### Working with the entire contents of the file at once
-### Often better to read in contents of the file a line at a time
-
+# Open file in with: block
 with open('test.txt','r') as fo:
-  # loop through the lines one at a time and print
-  for line in fo:
-    line=line.strip()
-    print("The line is: " + line)
-
-
-
+    # Loop through the lines one at a time and print
+    # Reads a line from fo into string 'line'
+    for line in fo:
+        line=line.strip()
+        print("The line is: " + line)
 
