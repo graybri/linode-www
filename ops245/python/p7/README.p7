@@ -1,6 +1,12 @@
 # README of OPS245 Python Part 7
 
 *** The text file "test.txt" is used for demonstration 
+*** The text file "test.bak" is used to restore "test.txt" 
+*** "test.txt" will be modified in file7.py
+*** The readonly file "testro.txt" is used by file8.py 
+*** ifcfg.conf is used by file9.py as input
+*** The file "ifcfg.conf.bak" can be used to restore "ifcfg.conf"
+*** "newifcfg.conf" will be the ouput file for file9.py 
 
 The following example scripts are presented in order
 
@@ -22,11 +28,17 @@ file4.py    - Demonstrate range() function
 
 file5.py    - Demonstrate looping directly through file handle object
 
+file6.py    - Demonstrate reading a certain number of bytes at a time
+            - Demonstrate tell() method for current file position
+            - Demonstrate seek() method for moving to a particular position
+              within the file
 
-notry.py - Demonstrate open file and it's exceptions with no
-           exception handling
-           Raise PermissionError and FileNotFoundError exceptions
+file7.py    - Demonstrate the write() method to write data to the file
+            - Demonstrate opening in "write" mode
+            - Demonstrate opening in "append" mode
 
-try2.py  - Demonstrate handling file open exceptions.
-           Demonstrate us of else: and finally:
+file8.py    - Demonstrate opening files in try: blocks to handle common 
+              file open exceptions.
+
+file9.py    - Demonstrate using python to edit a config file
 
