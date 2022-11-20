@@ -7,7 +7,6 @@
 # | |_) | |_| |_ 	Seneca College
 # |____(_)____(_)	brian.gray@senecacollege.ca
 #                
-
 ########################################################
 # Author  : Brian Gray
 # Date    : 2022-03-03
@@ -20,7 +19,7 @@
 #           Demonstrate looping through file contents
 #           Demonstrate command substitution
 #
-# Usage   :	./ex7.bash list of items for shopping list
+# Usage   :	./ex7.bash (list of items for shopping list)
 #
 #######################################################
 

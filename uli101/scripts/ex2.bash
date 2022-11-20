@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 #  ____   ____   	Brian Gray
 # | __ ) / ___| 	School of Information Technology
@@ -7,7 +6,6 @@
 # | |_) | |_| |_ 	Seneca College
 # |____(_)____(_)	brian.gray@senecacollege.ca
 #                
-
 ########################################################
 # Author  : Brian Gray
 # Date    : 2022-03-02
@@ -19,7 +17,7 @@
 #           Demonstrate shifting positional parameters
 #
 # Usage   : ./ex2.bash one two three four five six	 
-
+#
 #######################################################
 
 # Clear screen

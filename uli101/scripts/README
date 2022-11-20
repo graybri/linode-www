@@ -1,132 +1,81 @@
-########################################################
-# Author:	 Brian Gray
-# Date:		 2022-03-02
-# 
+### Files included in tarball
+
 # Name    : ex1.bash
-#
 # Purpose :	Demonstrate echo, echo -n, printf, variables,
 #			variable substitution, soft vs hard quotes,
 #			read keyboard input
-#
-# Usage   : No options	 
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-02
-# 
+#			Demonstrate using environment variables
+# Usage   : ./ex1.bash
+#           (No options)
+
+ 
 # Name    : ex2.bash
-#
 # Purpose :	Demonstrate and use positional parameters
 #           to use command line arguments
 #           Demonstrate shifting positional parameters
-#
 # Usage   : ./ex2.bash one two three four five six	 
 
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+
 # Name    : ex3.bash
-#
 # Purpose :	Demonstrate the use of 'set' to override 
-#           positional parameter values inline 
-#
+#           positional parameter values inline
+#           Demonstrate the use of set with command substitution 
 # Usage   :	./ex3.bash I hate winter
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+
+
 # Name    : ex4.bash
-#
 # Purpose :	Demonstrate redirecting STDOUT and STDERR
 #           for individual commands within the script
-#
-# Usage   : No options	 
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+# Usage   : ./ex4.bash
+#           (No options)	 
+
+ 
 # Name    : ex5.bash
-#
 # Purpose :	Demonstrate redirection within a script to
 #           override redirection from the command line
 #           Demonstrate addition of custom error 
 #           messages to error log
-#
 # Usage   :	./ex5.bash 2> script.err 
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+
+ 
 # Name    : ex6.bash
-#
 # Purpose :	Demonstrate set for positional parameters
 #           Demonstrate if-elif-else-fi control structure
 #           Demonstrate test [  ] command
 #           Numerical comparison operators
 #           Text comparison operators
 #           File tests
-#
-# Usage   :	No options
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+# Usage   :	./ex6.bash
+#           (No options)
+
+ 
 # Name    : ex7.bash
-#
 # Purpose :	Demonstrate for loops
 #           Demonstrate looping through positional 
 #           parameters
 #           Demonstrate looping through file contents
 #           Demonstrate command substitution
-#
-# Usage   :	./ex7.bash list of items for shopping list
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-03
-# 
+# Usage   :	./ex7.bash (list of items for shopping list)
+
+ 
 # Name    : ex8.bash
-#
 # Purpose :	Demonstrate the use of exit status codes 
 #           contained in the variable $?
 #           Demonstrate exiting the script with custom
 #           exit status codes representing different 
 #           error conditions
-#
-# Usage   :	No options 
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-04
-# 
+# Usage   :	./ex8.bash
+#           (No options) 
+
+
 # Name    : ex9.bash
-#
 # Purpose :	Demonstrate bash integer arithmetic 
 #           Demonstrate script requirement tests
 #           Demonstrate arithmetic substitution
-#
 # Usage   :	./ex9.bash 2 5 8 11 
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-04
-# 
+
+
 # Name    : ex10.bash
-#
 # Purpose :	Demonstrate while loops which loop as long
 #           as a condition evaluates to True (0) 
 #           Uses a while loop to prompt user for items to 
@@ -135,22 +84,15 @@
 #           Uses 2nd and 3rd while loop to read lines from
 #           the shopping.list file one a time, while read
 #           is successful echo the line
-#
-# Usage   :	 No options
-#
-#######################################################
-########################################################
-# Author  : Brian Gray
-# Date    : 2022-03-04
-# 
+#           Demonstrate use of break and input verificatin
+# Usage   :	./ex10.bash
+#           (No options)
+ 
+
 # Name    : walkthru.bash
-#
 # Purpose :	Example script used to demonstrate a script 
 #           walkthru
 #           3 different command lines demonstrated 
-#
 # Usage   :	./walkthru.bash
 #           ./walkthru.bash L0m1j0 CAtsDogs M3H2t7 2P5c5Y
 #           ./walkthru.bash m3T1d6 PostaL l2M4t5 
-#
-#######################################################

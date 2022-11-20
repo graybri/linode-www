@@ -21,7 +21,8 @@
 #           Text comparison operators
 #           File tests
 #
-# Usage   :	No options
+# Usage   :	/ex6.bash
+#           (No options)
 #
 #######################################################
 

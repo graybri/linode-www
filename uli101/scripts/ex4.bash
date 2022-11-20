@@ -7,7 +7,6 @@
 # | |_) | |_| |_ 	Seneca College
 # |____(_)____(_)	brian.gray@senecacollege.ca
 #                
-
 ########################################################
 # Author  : Brian Gray
 # Date    : 2022-03-03
@@ -17,7 +16,8 @@
 # Purpose :	Demonstrate redirecting STDOUT and STDERR
 #           for individual commands within the script
 #
-# Usage   : No options	 
+# Usage   : ./ex4.bash
+#           (No options)	 
 #
 #######################################################
 
@@ -35,7 +35,7 @@ read
 # run the command again redirecting STDERR
 echo "Sending STDERR to a file called script.err"
 echo
-chown root ~/Accept* 2> ~/script.err
+chown root ~/Accept* 2> script.err
 read
 
 # echo text to STDOUT
@@ -45,10 +45,10 @@ read
 # redirect STDOUT to a file
 # Note: after first redirection using >, use >> to append to file
 # number 1 optional, echo by itself sends just newline for blank line 
-echo "This is the output of ex4.bash" 1> ~/script.out
-echo "blah blah blah" 1>> ~/script.out
-echo 1>> ~/script.out
-echo "Sending STDOUT back to the screen" 1>> ~/script.out
+echo "This is the output of ex4.bash" 1> script.out
+echo "blah blah blah" 1>> script.out
+echo 1>> script.out
+echo "Sending STDOUT back to the screen" 1>> script.out
 echo
 read
 

@@ -23,7 +23,8 @@
 #           the shopping.list file one a time, while read
 #           is successful echo the line
 #
-# Usage   :	 No options
+# Usage   :	./ex10.bash
+#           (No options)
 #
 #######################################################
 
@@ -75,3 +76,29 @@ while read input
 do
 	echo $input
 done < shopping.list
+read
+clear
+
+# Demonstrate the use of break
+# Prompt for number until they enter a valid integer
+while true
+do 
+    read -p "Enter a number: " number
+    if echo "$number" | grep -E "^[0-9]+$" > /dev/null
+    then
+        break
+    fi
+done
+
+# Print a countdown using ((var-- operator))
+while [ $number -ge 1 ]
+do
+    echo "$number"
+    ((number--))
+done
+echo "Blast off!!"
+
+
+
+
+

@@ -1,0 +1,2 @@
+chown: cannot access '/home/bgray/Accept*': No such file or directory
+This is a custom error message

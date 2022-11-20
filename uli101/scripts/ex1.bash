@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #
 #  ____   ____   	Brian Gray
 # | __ ) / ___| 	School of Information Technology
@@ -7,7 +6,6 @@
 # | |_) | |_| |_ 	Seneca College
 # |____(_)____(_)	brian.gray@senecacollege.ca
 #                
-
 ########################################################
 # Author:	 Brian Gray
 # Date:		 2022-03-02
@@ -17,6 +15,7 @@
 # Purpose :	Demonstrate echo, echo -n, printf, variables,
 #			variable substitution, soft vs hard quotes,
 #			read keyboard input
+#           Demonstrate using an evvironment vaiable
 #
 # Usage   : No options	 
 #
@@ -69,4 +68,13 @@ read
 course="ULI101"
 college="Seneca College"
 echo "I am currently enrolled in ${course}, at ${college}."
+
+# Single quotes vs Double quotes
+echo 'I am currently enrolled in ${course}, at ${college}.'
+
+read
+# Demonstrate using Environment Variables
+echo "My login name is $USER"
+echo "My home directory is $HOME"
+echo "My shell is $SHELL"
 

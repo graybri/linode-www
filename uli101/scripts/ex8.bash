@@ -41,6 +41,18 @@ fi
 echo
 read
 
+# Alternate method
+# Check value of $? for success message
+echo "creating file $HOME/ex8.sample"
+if touch ex8.sample
+then
+	echo "Command Successful"
+else
+	echo "Command Unsuccessful"
+fi
+echo
+read
+
 # Remove the file
 # echo value of $? 
 echo "removing ex8.sample"

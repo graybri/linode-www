@@ -7,7 +7,6 @@
 # | |_) | |_| |_ 	Seneca College
 # |____(_)____(_)	brian.gray@senecacollege.ca
 #                
-
 ########################################################
 # Author  : Brian Gray
 # Date    : 2022-03-03
@@ -16,6 +15,7 @@
 #
 # Purpose :	Demonstrate the use of 'set' to override 
 #           positional parameter values inline 
+#           Demonstrate using command substitution for set
 #
 # Usage   :	./ex3.bash I hate winter
 #
@@ -43,4 +43,16 @@ echo "the new positional parameters are: $*"
 echo
 echo "luckily I saved my original values first: ${arg1} ${arg2} ${arg3}"
 echo
+read
+clear
+
+# Using set to assign new positional parameters via command substittution
+echo "Using set to assign new positional parameters"
+set $(ls)
+echo "There are $# file entries in the current directory"
+echo "They are: "
+for y in $*
+do
+    echo "$y"
+done
 
